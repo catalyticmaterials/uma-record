@@ -7,7 +7,7 @@
 #
 # The partitions, conda environment, and checkpoint path below belong to one
 # cluster, change them for yours. The CPU job goes to katla_short, the GPU job
-# to katla_l40s. The katla partitions share the hardware and differ in time
+# to katla_gpu. The katla partitions share the hardware and differ in time
 # limit, one hour is plenty here. Writes a batch script to a temp file and
 # submits it with sbatch, the Slurm log goes next to the records in
 # <example>/output/<cpu|gpu>/.
@@ -71,7 +71,7 @@ submit() {
             ;;
         gpu)
             device="cuda"
-            partition="katla_l40s"
+            partition="katla_gpu"
             gpus_line="#SBATCH --gpus=1"
             cpus="${GPU_CPUS}"
             mem="${GPU_MEM}"

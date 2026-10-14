@@ -96,11 +96,11 @@ _SLURM_VARIABLES: Final = (
     ("cpus", "SLURM_CPUS_PER_TASK"),
     ("cpus", "SLURM_CPUS_ON_NODE"),
 )
-# Slurm reports memory in MiB, the record uses MB throughout. The second
+# Slurm reports memory in MiB, so does the record. The second
 # variable is set instead of the first when the job asked for memory per cpu
 _SLURM_MEMORY_VARIABLES: Final = (
-    ("memory / MB", "SLURM_MEM_PER_NODE"),
-    ("memory per cpu / MB", "SLURM_MEM_PER_CPU"),
+    ("memory / MiB", "SLURM_MEM_PER_NODE"),
+    ("memory per cpu / MiB", "SLURM_MEM_PER_CPU"),
 )
 _MODEL_REFERENCE: Final = "wood2025uma"
 _SOFTWARE_REFERENCE: Final = "fairchem"
@@ -476,7 +476,7 @@ def _run_rows() -> list[_Row]:
         [
             ("written", _timestamp(written)),
             ("process elapsed", _duration(written - started)),
-            ("peak process memory / MB", _peak_memory()),
+            ("peak process memory / MiB", _peak_memory()),
         ]
     )
     return rows
@@ -543,7 +543,7 @@ def _slurm_rows() -> list[_Row]:
     for key, variable in _SLURM_MEMORY_VARIABLES:
         memory = os.environ.get(variable, "")
         if memory.isdigit():
-            rows.append((key, f"{int(memory) * 1048576 / 1e6:.1f}"))
+            rows.append((key, f"{int(memory):.1f}"))
             break
     return rows
 
@@ -557,7 +557,7 @@ def _peak_memory() -> str:
     maxrss = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
     # ru_maxrss is in kilobytes on linux and in bytes on macos
     in_bytes = maxrss if sys.platform == "darwin" else maxrss * 1024
-    return f"{in_bytes / 1e6:.1f}"
+    return f"{in_bytes / 1048576:.1f}"
 
 
 def _calc_rows(
@@ -748,10 +748,10 @@ def _gpu_rows(device: object) -> list[_Row]:
         return []
     name = _attempt(lambda: torch.cuda.get_device_name(str(device)))
     # zero with a batch server, the model then lives in another process
-    peak = _attempt(lambda: torch.cuda.max_memory_allocated(str(device)) / 1e6)
+    peak = _attempt(lambda: torch.cuda.max_memory_allocated(str(device)) / 1048576)
     rows = [("gpu", _text(name)), ("gpu driver", _gpu_driver_version())]
     if isinstance(peak, float) and peak > 0.0:
-        rows.append(("peak device memory / MB", f"{peak:.1f}"))
+        rows.append(("peak device memory / MiB", f"{peak:.1f}"))
     return rows
 
 

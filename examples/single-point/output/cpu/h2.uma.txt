@@ -1,22 +1,22 @@
 UMA calculation record (uma-record v0.1.0)
 
 Run
-  command:                   run.py --device cpu --checkpoint /groups/kemi/liasi/share/cheac/checkpoints/uma/uma-s-1p2p1.pt
-  script:                    /lustre/hpc/kemi/liasi/projects/uma-record/examples/single-point/run.py
-  script sha256:             a7b122b89f2043a26f33606e81e713a4a376039f749eda7471489918112c9793
-  user:                      liasi
-  node:                      node024.cluster
-  os:                        Linux-5.14.0-687.17.1.el9_8.x86_64-x86_64-with-glibc2.34
-  working directory:         /lustre/hpc/kemi/liasi/projects/uma-record/examples/single-point
-  job id:                    65912248
-  job name:                  uma-record-single-point-cpu
-  partition:                 katla_short
-  cpus:                      1
-  memory / MB:               8589.9
-  process started:           2026-10-08T17:08:53+02:00
-  written:                   2026-10-08T17:10:31+02:00
-  process elapsed:           0 days 0 hours 1 minutes 38.3 seconds
-  peak process memory / MB:  5792.6
+  command:                    run.py --device cpu --checkpoint /groups/kemi/liasi/share/cheac/checkpoints/uma/uma-s-1p2p1.pt
+  script:                     /lustre/hpc/kemi/liasi/projects/uma-record/examples/single-point/run.py
+  script sha256:              a7b122b89f2043a26f33606e81e713a4a376039f749eda7471489918112c9793
+  user:                       liasi
+  node:                       node024.cluster
+  os:                         Linux-5.14.0-687.17.1.el9_8.x86_64-x86_64-with-glibc2.34
+  working directory:          /lustre/hpc/kemi/liasi/projects/uma-record/examples/single-point
+  job id:                     66376844
+  job name:                   uma-record-single-point-cpu
+  partition:                  katla_short
+  cpus:                       1
+  memory / MiB:               8192.0
+  process started:            2026-10-14T13:52:49+02:00
+  written:                    2026-10-14T13:55:11+02:00
+  process elapsed:            0 days 0 hours 2 minutes 22.0 seconds
+  peak process memory / MiB:  5440.3
 
 Calculator
   calculator:               FAIRChemCalculator

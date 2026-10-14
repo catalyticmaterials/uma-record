@@ -387,8 +387,8 @@ def test_slurm_array_task_is_described(
     assert run["job id"] == "5_3"
     assert run["partition"] == "short"
     assert run["cpus"] == "4"
-    assert run["memory per cpu / MB"] == "1073.7"
-    assert "memory / MB" not in run
+    assert run["memory per cpu / MiB"] == "1024.0"
+    assert "memory / MiB" not in run
 
 
 def test_slurm_job_is_described(
@@ -409,7 +409,7 @@ def test_slurm_job_is_described(
     run = fields["Run"]
     assert run["job id"] == "7"
     assert run["cpus"] == "2"
-    assert run["memory / MB"] == "2147.5"
+    assert run["memory / MiB"] == "2048.0"
 
 
 def test_no_slurm_rows_outside_a_job(

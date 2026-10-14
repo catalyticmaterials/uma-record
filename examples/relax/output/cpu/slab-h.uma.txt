@@ -1,22 +1,22 @@
 UMA calculation record (uma-record v0.1.0)
 
 Run
-  command:                   run.py --device cpu --checkpoint /groups/kemi/liasi/share/cheac/checkpoints/uma/uma-s-1p2p1.pt
-  script:                    /lustre/hpc/kemi/liasi/projects/uma-record/examples/relax/run.py
-  script sha256:             cbe509b2c98b17b4579c0ef5acf3bc6f04d5f7dbda4904b18f33075c2d65c072
-  user:                      liasi
-  node:                      node024.cluster
-  os:                        Linux-5.14.0-687.17.1.el9_8.x86_64-x86_64-with-glibc2.34
-  working directory:         /lustre/hpc/kemi/liasi/projects/uma-record/examples/relax
-  job id:                    65912246
-  job name:                  uma-record-relax-cpu
-  partition:                 katla_short
-  cpus:                      1
-  memory / MB:               8589.9
-  process started:           2026-10-08T17:08:50+02:00
-  written:                   2026-10-08T17:10:35+02:00
-  process elapsed:           0 days 0 hours 1 minutes 44.9 seconds
-  peak process memory / MB:  5660.8
+  command:                    run.py --device cpu --checkpoint /groups/kemi/liasi/share/cheac/checkpoints/uma/uma-s-1p2p1.pt
+  script:                     /lustre/hpc/kemi/liasi/projects/uma-record/examples/relax/run.py
+  script sha256:              cbe509b2c98b17b4579c0ef5acf3bc6f04d5f7dbda4904b18f33075c2d65c072
+  user:                       liasi
+  node:                       node025.cluster
+  os:                         Linux-5.14.0-687.17.1.el9_8.x86_64-x86_64-with-glibc2.34
+  working directory:          /lustre/hpc/kemi/liasi/projects/uma-record/examples/relax
+  job id:                     66376846
+  job name:                   uma-record-relax-cpu
+  partition:                  katla_short
+  cpus:                       1
+  memory / MiB:               8192.0
+  process started:            2026-10-14T13:52:53+02:00
+  written:                    2026-10-14T13:56:56+02:00
+  process elapsed:            0 days 0 hours 4 minutes 3.6 seconds
+  peak process memory / MiB:  5428.9
 
 Calculator
   calculator:               FAIRChemCalculator
